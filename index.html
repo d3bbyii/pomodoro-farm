@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍅 我的番茄農場</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- 第一頁：番茄農場 -->
+    <div id="farmPage" class="page farm-page">
+      <header>
+        <h1>🍅 我的番茄農場</h1>
+        <p>今天也一起種一顆專注的番茄吧！</p>
+      </header>
+
+      <main class="farm">
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+
+        <button class="tomato t1" aria-label="開始專注">🍅</button>
+        <button class="tomato t2" aria-label="開始專注">🍅</button>
+        <button class="tomato t3" aria-label="開始專注">🍅</button>
+        <button class="tomato t4" aria-label="開始專注">🍅</button>
+        <button class="tomato t5" aria-label="開始專注">🍅</button>
+
+        <div class="ground-deco">🌱 🌿 🌱 🌿 🌱 🌿 🌱</div>
+        <div id="harvest" class="harvest"></div>
+      </main>
+
+      <p class="hint">點選一顆番茄開始專注 🍅</p>
+      <p id="farmCount" class="hint sub"></p>
+    </div>
+
+    <!-- 第二頁：選擇模式（彈出卡片） -->
+    <div id="modeModal" class="mode-modal" hidden>
+      <div class="mode-card">
+        <div class="big-tomato">🍅</div>
+        <h2>這顆番茄要做什麼？</h2>
+        <p>選擇今天的專注模式</p>
+
+        <button class="mode-button" data-mode="STUDY">
+          <span>📖</span>
+          <div>
+            <strong>閱讀模式</strong>
+            <small>閱讀、學習、寫作（可以低頭看書）</small>
+          </div>
+        </button>
+
+        <button class="mode-button" data-mode="CODING">
+          <span>💻</span>
+          <div>
+            <strong>開發模式</strong>
+            <small>Coding、工作、製作專案（看著螢幕）</small>
+          </div>
+        </button>
+
+        <button id="modeCancel" class="ghost">取消</button>
+      </div>
+    </div>
+
+    <!-- 第三頁：專注計時 -->
+    <div id="focusPage" class="page focus-page" hidden>
+      <div class="focus-card">
+        <div class="topbar">
+          <button id="backBtn" class="ghost">← 回到農場</button>
+          <span id="modeBadge" class="badge">🍅</span>
+        </div>
+
+        <div class="camera-container">
+          <video id="video" autoplay playsinline muted></video>
+          <div id="camOff" class="camera-off" hidden></div>
+          <div class="camera-overlay"><span id="phase">尚未開始</span></div>
+        </div>
+
+        <div id="status">準備中...</div>
+
+        <div class="timer">
+          <div id="clock">25:00</div>
+          <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+          <div id="growth">🌱 準備種下一顆番茄</div>
+        </div>
+
+        <div class="durations">
+          <label>專注時間
+            <input id="focusMin" type="number" min="1" max="180" step="1" value="25"> 分鐘
+          </label>
+          <label>休息時間
+            <input id="breakMin" type="number" min="1" max="60" step="1" value="5"> 分鐘
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="startBtn" class="primary-button">🍅 開始專注</button>
+          <button id="calibrateBtn" class="secondary-button">校準</button>
+          <button id="resetBtn" class="secondary-button">重置</button>
+          <button id="pipBtn" class="secondary-button">📌 浮動視窗</button>
+        </div>
+        <label id="pipAutoLabel" class="auto-pip">
+          <input id="pipAuto" type="checkbox" checked> 開始專注時自動開啟浮動視窗
+        </label>
+
+        <p id="info" class="note"></p>
+
+        <section id="report" hidden>
+          <h3>📊 本輪報告 <span id="reportMeta"></span></h3>
+          <div id="cards" class="cards"></div>
+
+          <h4>專注時間軸</h4>
+          <div id="timelineBar"></div>
+          <div class="axis"><span>0</span><span id="axisEnd"></span></div>
+
+          <h4>時間分布</h4>
+          <div class="chartBox"><canvas id="pieChart"></canvas></div>
+          <p id="coverage" class="note"></p>
+        </section>
+
+        <section id="history">
+          <h3>📈 歷史紀錄</h3>
+          <p id="historyEmpty" class="note">還沒有紀錄，完成一輪專注後會顯示在這裡。</p>
+          <div id="historyBox" class="chartBox" hidden><canvas id="historyChart"></canvas></div>
+          <button id="clearHistoryBtn" class="secondary-button" hidden>清除歷史紀錄</button>
+        </section>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
