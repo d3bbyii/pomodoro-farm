@@ -1,18 +1,23 @@
 {
-  "name": "pomodoro-cv",
-  "version": "0.0.0",
+  "name": "pomodoro-farm",
+  "description": "基於電腦視覺之雙模式情境感知番茄鐘系統 — 開瀏覽器就能用，影像不上傳雲端",
   "private": true,
+  "version": "0.1.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3bbyii/pomodoro-farm.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "vite": "^8.3.0"
-  },
   "dependencies": {
-    "@mediapipe/tasks-vision": "^1.0.1",
-    "chart.js": "^4.5.1"
+    "@mediapipe/tasks-vision": "^0.10.14",
+    "chart.js": "^4.4.4"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
   }
 }

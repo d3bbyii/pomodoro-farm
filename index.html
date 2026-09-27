@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🍅 我的番茄農場</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <!-- 第一頁：番茄農場 -->
     <div id="farmPage" class="page farm-page">
-      <header>
-        <h1>🍅 我的番茄農場</h1>
+      <header class="brand">
+        <div class="badge">
+          <h1>🍅 番茄農場</h1>
+        </div>
         <p>今天也一起種一顆專注的番茄吧！</p>
       </header>
 
@@ -64,7 +71,7 @@
       <div class="focus-card">
         <div class="topbar">
           <button id="backBtn" class="ghost">← 回到農場</button>
-          <span id="modeBadge" class="badge">🍅</span>
+          <span id="modeBadge" class="mode-badge">🍅</span>
         </div>
 
         <div class="camera-container">
